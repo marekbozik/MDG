@@ -1,0 +1,26 @@
+@startuml
+skinparam BackgroundColor transparent
+skinparam componentStyle rectangle
+
+
+
+package "bin" {
+  [luadocer]
+  [lua-plantuml]
+  [lua-highlighter]
+  [lua-formatter]
+  [lua-addComments]
+}
+
+package "lib" {
+    component _luadocer {
+
+    component A.5 [
+    init.lua] 
+
+    component A.6 [doclet.lua
+    ]
+    }
+}
+A.6->A.5
+@enduml
