@@ -1,4 +1,5 @@
 @startuml
+left to right direction
 skinparam BackgroundColor transparent
 skinparam componentStyle rectangle
 
@@ -119,72 +120,72 @@ package "lib" {
 }
 
 'luadocer
-[luadocer]->[_luadocer.init.lua]
-[luadocer]->[_luadocer.util.lua]
+[luadocer]----->[_luadocer.init.lua]
+[luadocer]----->[_luadocer.util.lua]
 
 'lua-addComments
-[lua-addComments]->[comments.templateComments.lua]
+[lua-addComments]----->[comments.templateComments.lua]
 
 'lua-formatter
-[lua-formatter]->[luapretty.formatter.lua]
-[lua-formatter]->[alt_getopt.lua]
+[lua-formatter]----->[luapretty.formatter.lua]
+[lua-formatter]----->[alt_getopt.lua]
 
 'lua-highlighter
-[lua-highlighter]->[luapretty.highlighter.lua]
-[lua-highlighter]->[alt_getopt.lua]
-[lua-highlighter]->[_luadocer.doclet.debug.lua]
+[lua-highlighter]----->[luapretty.highlighter.lua]
+[lua-highlighter]----->[alt_getopt.lua]
+[lua-highlighter]----->[_luadocer.doclet.debug.lua]
 
 'lua-plantuml
-[lua-plantuml]->[luaplantuml.init.lua]
-[lua-plantuml]->[alt_getopt.lua]
-[lua-plantuml]->[lfs.so]
+[lua-plantuml]----->[luaplantuml.init.lua]
+[lua-plantuml]----->[alt_getopt.lua]
+[lua-plantuml]----->[lfs.so]
 
 
 'cosmo
-[cosmo.lua]->[cosmo.grammar.lua]
-[cosmo.lua]->[cosmo.fill.lua]
+[cosmo.lua]----->[cosmo.grammar.lua]
+[cosmo.lua]----->[cosmo.fill.lua]
 
 'leg
-[leg.lua]->[leg.grammar.lua]
-[leg.lua]->[leg.scanner.lua]
-[leg.lua]->[leg.parser.lua]
+[leg.lua]----->[leg.grammar.lua]
+[leg.lua]----->[leg.scanner.lua]
+[leg.lua]----->[leg.parser.lua]
 
 'mime
-[mime.lua]->[ltn12.lua]
-[mime.lua]->[mime.core.so]
+[mime.lua]----->[ltn12.lua]
+[mime.lua]----->[mime.core.so]
 
 're
-[re.lua]->[lpeg.so]
+[re.lua]----->[lpeg.so]
 
 'socket
-[socket.lua]->[socket.core.so]
+[socket.lua]----->[socket.core.so]
 
 'comments
-[comments.common.lua]->[comments.aliases.lua]
-[comments.custom.lua]->[re.lua]
-[comments.explua.lua]->[re.lua]
-[comments.explua.lua]->[comments.common.lua]
-[comments.init.lua]->[re.lua]
+[comments.common.lua]----->[comments.aliases.lua]
+[comments.custom.lua]----->[re.lua]
+[comments.explua.lua]----->[re.lua]
+[comments.explua.lua]----->[comments.common.lua]
+[comments.init.lua]----->[re.lua]
 
-[comments.init.lua]->[comments.explua.lua]
-[comments.init.lua]->[comments.luadoc.lua]
-[comments.init.lua]->[comments.literate.lua]
-[comments.init.lua]->[comments.custom.lua]
-[comments.init.lua]->[comments.ldoc.lua]
-[comments.init.lua]->[comments.leg.lua]
+[comments.init.lua]----->[comments.explua.lua]
+[comments.init.lua]----->[comments.luadoc.lua]
+[comments.init.lua]----->[comments.literate.lua]
+[comments.init.lua]----->[comments.custom.lua]
+[comments.init.lua]----->[comments.ldoc.lua]
+[comments.init.lua]----->[comments.leg.lua]
 
-[comments.ldoc.lua]->[re.lua]
-[comments.ldoc.lua]->[comments.common.lua]
-[comments.leg.lua]->[comments.common.lua]
-[comments.literate.lua]->[re.lua]
-[comments.luadoc.lua]->[comments.common.lua]
-[comments.luadoc.lua]->[re.lua]
+[comments.ldoc.lua]----->[re.lua]
+[comments.ldoc.lua]----->[comments.common.lua]
+[comments.leg.lua]----->[comments.common.lua]
+[comments.literate.lua]----->[re.lua]
+[comments.luadoc.lua]----->[comments.common.lua]
+[comments.luadoc.lua]----->[re.lua]
 
-[comments.templateComments.lua]->[metrics.init.lua]
-[comments.templateComments.lua]->[metrics.utils.lua]
-[comments.templateComments.lua]->[metrics.utils.lua]
+[comments.templateComments.lua]----->[metrics.init.lua]
+[comments.templateComments.lua]----->[metrics.utils.lua]
+[comments.templateComments.lua]----->[metrics.utils.lua]
 'je tu este nepouzivana zavislot na getdoc.utils
-[comments.templateComments.lua]->[lfs.so]
+[comments.templateComments.lua]----->[lfs.so]
 
 
 
