@@ -159,6 +159,34 @@ package "lib" {
 'socket
 [socket.lua]->[socket.core.so]
 
+'comments
+[comments.common.lua]->[comments.aliases.lua]
+[comments.custom.lua]->[re.lua]
+[comments.explua.lua]->[re.lua]
+[comments.explua.lua]->[comments.common.lua]
+[comments.init.lua]->[re.lua]
+
+[comments.init.lua]->[comments.explua.lua]
+[comments.init.lua]->[comments.luadoc.lua]
+[comments.init.lua]->[comments.literate.lua]
+[comments.init.lua]->[comments.custom.lua]
+[comments.init.lua]->[comments.ldoc.lua]
+[comments.init.lua]->[comments.leg.lua]
+
+[comments.ldoc.lua]->[re.lua]
+[comments.ldoc.lua]->[comments.common.lua]
+[comments.leg.lua]->[comments.common.lua]
+[comments.literate.lua]->[re.lua]
+[comments.luadoc.lua]->[comments.common.lua]
+[comments.luadoc.lua]->[re.lua]
+
+[comments.templateComments.lua]->[metrics.init.lua]
+[comments.templateComments.lua]->[metrics.utils.lua]
+[comments.templateComments.lua]->[metrics.utils.lua]
+'je tu este nepouzivana zavislot na getdoc.utils
+[comments.templateComments.lua]->[lfs.so]
+
+
 
 
 @enduml
