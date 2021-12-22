@@ -10,6 +10,7 @@ package "bin" {
   [lua-highlighter]
   [lua-formatter]
   [lua-addComments]
+  [lfs.so]
 }
 
 package "lib" {
@@ -23,6 +24,7 @@ package "lib" {
     [re.lua]
     [socket.lua]
     [strict.lua]
+    [lpeg.so]
 
     component comments {
         [comments.aliases.lua] 
@@ -62,7 +64,14 @@ package "lib" {
     component _luadocer {
         [_luadocer.config.lua]
         component doclet {
-
+            [_luadocer.doclet.debug.lua]
+            [_luadocer.doclet.formatter.lua]
+            component html{
+                
+            }
+            [_luadocer.doclet.html.lua]
+            [_luadocer.doclet.raw.lua]
+            [_luadocer.doclet.templates.lua]
         }
         [_luadocer.init.lua]
         [_luadocer.io.lua]
@@ -102,10 +111,54 @@ package "lib" {
         [metrics.utils.lua]
     }
     component mime {
-        
+        [mime.core.so]
     }
     component socket {
+        [socket.core.so]
     }
 }
+
+'luadocer
+[luadocer]->[_luadocer.init.lua]
+[luadocer]->[_luadocer.util.lua]
+
+'lua-addComments
+[lua-addComments]->[comments.templateComments.lua]
+
+'lua-formatter
+[lua-formatter]->[luapretty.formatter.lua]
+[lua-formatter]->[alt_getopt.lua]
+
+'lua-highlighter
+[lua-highlighter]->[luapretty.highlighter.lua]
+[lua-highlighter]->[alt_getopt.lua]
+[lua-highlighter]->[_luadocer.doclet.debug.lua]
+
+'lua-plantuml
+[lua-plantuml]->[luaplantuml.init.lua]
+[lua-plantuml]->[alt_getopt.lua]
+[lua-plantuml]->[lfs.so]
+
+
+'cosmo
+[cosmo.lua]->[cosmo.grammar.lua]
+[cosmo.lua]->[cosmo.fill.lua]
+
+'leg
+[leg.lua]->[leg.grammar.lua]
+[leg.lua]->[leg.scanner.lua]
+[leg.lua]->[leg.parser.lua]
+
+'mime
+[mime.lua]->[ltn12.lua]
+[mime.lua]->[mime.core.so]
+
+'re
+[re.lua]->[lpeg.so]
+
+'socket
+[socket.lua]->[socket.core.so]
+
+
 
 @enduml
