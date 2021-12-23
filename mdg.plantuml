@@ -187,7 +187,33 @@ package "lib" {
 'je tu este nepouzivana zavislot na getdoc.utils
 [comments.templateComments.lua]----->[lfs.so]
 
+'cosmo
+[cosmo.fill.lua]----->[cosmo.grammar.lua]
+[cosmo.grammar.lua]----->[re.lua]
+[cosmo.grammar.lua]----->[lpeg.so]
+
+'leg
+[leg.grammar.lua]----->[lpeg.so]
+[leg.parser.lua]----->[lpeg.so]
+[leg.parser.lua]----->[leg.grammar.lua]
+[leg.parser.lua]----->[leg.scanner.lua]
+[leg.scanner.lua]----->[lpeg.so]
+
+'literate
+[literate.init.lua]----->[luapretty.highlighter.lua]
+[literate.init.lua]----->[luapretty.ast_helper.lua]
+[literate.init.lua]----->[literate.util.lua]
+[literate.init.lua]----->[_luadocer.doclet.html.lua]
+[literate.init.lua]----->[markdown.lua]
 
 
+'_luadocer
+[_luadocer.init.lua]----->[_luadocer.util.lua]
+[_luadocer.init.lua]----->[_luadocer.config.lua]
+[_luadocer.util.lua]----->[re.lua]
+[_luadocer.util.lua]----->[lfs.so]
+    'doclet
+    [_luadocer.doclet.formatter.lua]----->[_luadocer.util.lua]
+    
 
 @enduml
