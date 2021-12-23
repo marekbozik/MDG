@@ -318,6 +318,12 @@ package "lib" {
     [metrics.luadoc.captures.lua]----->[metrics.utils.lua]
     [metrics.luadoc.commentParser.lua]----->[comments.init.lua]
 
+    'templates
+    [metrics.templates.docMetricsTemplates.lua]----->[metrics.templates.utils.lua]
+    [metrics.templates.funcTableTemplates.lua]----->[metrics.templates.utils.lua]
+    [metrics.templates.smellTemplates.lua]----->[metrics.templates.utils.lua]
+    [metrics.templates.init.lua]----->[metrics.init.lua]
+    [metrics.templates.init.lua]----->[metrics.templates.utils.lua]
 
 
 
