@@ -250,5 +250,24 @@ package "lib" {
         [_luadocer.taglet.standard.tags.lua]----->[_luadocer.util.lua]
         [_luadocer.taglet.standard.tags.lua]----->[_luadocer.taglet.standard.aliases.lua]
 
+'luaplantuml
+[luaplantuml.init.lua]----->[luaplantuml.generate_uml.lua]
+[luaplantuml.init.lua]----->[metrics.init.lua]
+
+'luapretty
+[luapretty.formatter.lua]----->[lpeg.so]
+[luapretty.formatter.lua]----->[leg.parser.lua]
+[luapretty.formatter.lua]----->[leg.scanner.lua]
+[luapretty.formatter.lua]----->[leg.grammar.lua]
+[luapretty.formatter.lua]----->[cosmo.lua]
+[luapretty.highlighter.lua]----->[lpeg.so]
+[luapretty.highlighter.lua]----->[leg.parser.lua]
+[luapretty.highlighter.lua]----->[leg.scanner.lua]
+[luapretty.highlighter.lua]----->[leg.grammar.lua]
+
+
+
+
+
 
 @enduml
