@@ -103,12 +103,22 @@ package "lib" {
     component metrics {
 
         component captures {
-
+            [metrics.captures.AST.lua]
+            [metrics.captures.block.lua]
+            [metrics.captures.cyclomatic.lua]
+            [metrics.captures.document_metrics.lua]
+            [metrics.captures.functiontree.lua]
+            [metrics.captures.halstead.lua]
+            [metrics.captures.infoflow.lua]
+            [metrics.captures.LOC.lua]
+            [metrics.captures.smells.lua]
+            [metrics.captures.statements.lua]
         }
         [metrics.init.lua]
         [metrics.lookup.lua]
         component luadoc {
-
+            [metrics.luadoc.captures.lua]
+            [metrics.luadoc.commentParser.lua]
         }
         [metrics.rules.lua]
         component templates {
@@ -264,6 +274,54 @@ package "lib" {
 [luapretty.highlighter.lua]----->[leg.parser.lua]
 [luapretty.highlighter.lua]----->[leg.scanner.lua]
 [luapretty.highlighter.lua]----->[leg.grammar.lua]
+
+'metrics
+[metrics.init.lua]----->[lpeg.so]
+[metrics.init.lua]----->[leg.parser.lua]
+[metrics.init.lua]----->[leg.grammar.lua]
+[metrics.init.lua]----->[metrics.rules.lua]
+[metrics.init.lua]----->[metrics.utils.lua]
+[metrics.init.lua]----->[metrics.captures.AST.lua]
+[metrics.init.lua]----->[metrics.captures.LOC.lua]
+[metrics.init.lua]----->[metrics.captures.infoflow.lua]
+[metrics.init.lua]----->[metrics.captures.halstead.lua]
+[metrics.init.lua]----->[metrics.captures.functiontree.lua]
+[metrics.init.lua]----->[metrics.captures.statements.lua]
+[metrics.init.lua]----->[metrics.captures.smells.lua]
+[metrics.init.lua]----->[metrics.captures.document_metrics.lua]
+[metrics.init.lua]----->[metrics.captures.cyclomatic.lua]
+[metrics.init.lua]----->[metrics.captures.block.lua]
+[metrics.init.lua]----->[metrics.luadoc.captures.lua]
+
+[metrics.rules.lua]----->[lpeg.so]
+[metrics.rules.lua]----->[leg.parser.lua]
+[metrics.rules.lua]----->[leg.scanner.lua]
+
+    'captures
+    [metrics.captures.AST.lua]----->[metrics.utils.lua]
+    [metrics.captures.block.lua]----->[metrics.utils.lua]
+    [metrics.captures.cyclomatic.lua]----->[metrics.rules.lua]
+    [metrics.captures.document_metrics.lua]----->[metrics.utils.lua]
+    [metrics.captures.document_metrics.lua]----->[comments.init.lua]
+    [metrics.captures.functiontree.lua]----->[metrics.utils.lua]
+    [metrics.captures.halstead.lua]----->[metrics.utils.lua]
+    [metrics.captures.halstead.lua]----->[metrics.rules.lua]
+    [metrics.captures.infoflow.lua]----->[metrics.utils.lua]
+    [metrics.captures.LOC.lua]----->[lpeg.so]
+    [metrics.captures.LOC.lua]----->[metrics.rules.lua]
+    [metrics.captures.LOC.lua]----->[metrics.utils.lua]
+    [metrics.captures.statements.lua]----->[metrics.rules.lua]
+    [metrics.captures.statements.lua]----->[metrics.utils.lua]
+
+    'luadoc
+    [metrics.luadoc.captures.lua]----->[metrics.luadoc.commentParser.lua]
+    [metrics.luadoc.captures.lua]----->[metrics.utils.lua]
+    [metrics.luadoc.commentParser.lua]----->[comments.init.lua]
+
+
+
+
+
 
 
 
