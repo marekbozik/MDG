@@ -325,13 +325,4 @@ package "lib" {
     [metrics.templates.init.lua]----->[metrics.init.lua]
     [metrics.templates.init.lua]----->[metrics.templates.utils.lua]
 
-
-
-
-
-
-
-
-
-
 @enduml
