@@ -64,7 +64,7 @@ package "lib" {
     }
     component _luadocer {
         [_luadocer.config.lua]
-        component doclet {
+        component _luadocer.doclet {
             [_luadocer.doclet.debug.lua]
             [_luadocer.doclet.formatter.lua]
             component html{
@@ -77,9 +77,9 @@ package "lib" {
         [_luadocer.init.lua]
         [_luadocer.io.lua]
         [_luadocer.lp.lua]
-        component taglet {
+        component _luadocer.taglet {
             [_luadocer.taglet.standard.lua]
-            component standard {
+            component _luadocer.taglet.standard {
                 [_luadocer.taglet.standard.aliases.lua]
                 [_luadocer.taglet.standard.tags.lua]
             }
@@ -96,13 +96,13 @@ package "lib" {
         [luapretty.ast_helper.lua]
         [luapretty.formatter.lua]
         [luapretty.highlighter.lua]
-        component templates{
+        component luapretty.templates{
             [luapretty.templates.default.lua]
         }
     }    
     component metrics {
 
-        component captures {
+        component metrics.captures {
             [metrics.captures.AST.lua]
             [metrics.captures.block.lua]
             [metrics.captures.cyclomatic.lua]
@@ -116,12 +116,12 @@ package "lib" {
         }
         [metrics.init.lua]
         [metrics.lookup.lua]
-        component luadoc {
+        component metrics.luadoc {
             [metrics.luadoc.captures.lua]
             [metrics.luadoc.commentParser.lua]
         }
         [metrics.rules.lua]
-        component templates {
+        component metrics.templates {
             [metrics.templates.docMetricsTemplates.lua]
             [metrics.templates.funcTableTemplates.lua]
             [metrics.templates.init.lua]
