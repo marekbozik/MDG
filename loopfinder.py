@@ -1,11 +1,9 @@
-
 class Node:
     def __init__(self, name : str):
         self.name = name
         self.lchild = []
     def addChild(self, name):
         self.lchild.append(name)
-
 
 nodes = {}
 
@@ -15,7 +13,7 @@ for node in node_file.readlines():
     
 
 
-children_file = open('children.txt', 'r')
+children_file = open('children1.txt', 'r')
 for child in children_file.readlines():
     n = ""
     for c in child:
@@ -36,13 +34,18 @@ for child in children_file.readlines():
 def loop(srcN, currN):
     if srcN.name == currN.name:
         print(srcN.name)
-        return
+        return True
     for c in nodes[currN.name].lchild:
-        loop(srcN, nodes[c])
+        print(nodes[c].name)
+        if loop(srcN, nodes[c]): 
+            return
+    return
 
 
 for n in nodes:
+    print(n)
     for c in nodes[n].lchild:
+        print(c)
         loop(nodes[n], nodes[c])
 
 
