@@ -4,7 +4,6 @@ help : str = 'USAGE:\n \tpython optimalizer.py source_file excluded_modules_file
 modules_file_help: str = 'MODULE FILE USAGE:\n \t[moduleA]\n\t[moduleB]\n\t[moduleN]'
 
 try:
-    print(sys.argv[1])
     src_file = open(sys.argv[1], 'r')
     modules_file = open(sys.argv[2], 'r')
 except:

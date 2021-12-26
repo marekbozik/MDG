@@ -246,7 +246,7 @@ package "lib" {
     [_luadocer.doclet.html.lua]----->[metrics.templates.funcTableTemplates.lua]
     [_luadocer.doclet.html.lua]----->[metrics.templates.init.lua]
     [_luadocer.doclet.html.lua]----->[metrics.templates.smellTemplates.lua]
-    [_luadocer.doclet.html.lua]----->[_luadocer.doclet.templates]
+    [_luadocer.doclet.html.lua]----->[_luadocer.doclet.templates.lua]
 
     'taglet   
     [_luadocer.taglet.standard.lua]----->[_luadocer.io.lua]
